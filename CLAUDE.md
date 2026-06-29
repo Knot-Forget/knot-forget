@@ -23,6 +23,8 @@ cargo fmt            # format
 
 GitHub Flow: all feature branches start from `main` and merge back into `main` via PR.
 
+Commits follow [Conventional Commits](https://www.conventionalcommits.org): `type(scope): description`. Valid types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
+
 ```bash
 git checkout main && git pull
 git checkout -b <type>/<issue-number>-<short-description>
