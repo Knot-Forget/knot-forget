@@ -18,3 +18,15 @@ cargo test <name>    # single test by name
 cargo clippy         # lint
 cargo fmt            # format
 ```
+
+## Git Workflow
+
+GitHub Flow: all feature branches start from `main` and merge back into `main` via PR.
+
+```bash
+git checkout main && git pull
+git checkout -b <type>/<issue-number>-<short-description>
+# work...
+git push -u origin <branch>
+# open PR → merge into main
+```
