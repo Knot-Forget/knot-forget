@@ -30,3 +30,5 @@ git checkout -b <type>/<issue-number>-<short-description>
 git push -u origin <branch>
 # open PR → merge into main
 ```
+
+Each commit must be atomic and scoped to a single concern. When adding a feature, commit the implementation files and the test files separately. The same applies to documentation changes — always in their own commit.
