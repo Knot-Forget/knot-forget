@@ -7,7 +7,11 @@ pub struct Knot {
 
 impl Knot {
     pub fn new(id: u64, timestamp: u64, payload: Vec<u8>) -> Self {
-        Self { id, timestamp, payload }
+        Self {
+            id,
+            timestamp,
+            payload,
+        }
     }
 }
 
@@ -26,7 +30,7 @@ mod tests {
         assert_eq!(knot.id, test_id);
         assert_eq!(knot.timestamp, test_timestamp);
         assert_eq!(knot.payload, test_payload);
-    
+
         assert!(knot.clone() == knot);
         assert!(format!("{:?}", knot).contains("Knot"));
     }
