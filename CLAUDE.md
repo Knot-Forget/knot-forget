@@ -4,15 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Knot Forget is a lightweight Rust engine for time and reminder management. The project is in early scaffold stage — no source code exists yet.
+Knot Forget is a lightweight Rust engine for time and reminder management.
 
 ## Commands
 
-Once `Cargo.toml` is initialized:
-
 ```bash
 cargo build          # build
-cargo run            # run
 cargo test           # all tests
 cargo test <name>    # single test by name
 cargo clippy         # lint
@@ -30,7 +27,7 @@ git checkout main && git pull
 git checkout -b <type>/<issue-number>-<short-description>
 # work...
 git push -u origin <branch>
-# open PR → merge into main
+# open PR → merge into main (merge commit only — squash and rebase disabled)
 ```
 
 Each commit must be atomic and scoped to a single concern. When adding a feature, commit the implementation files and the test files separately. The same applies to documentation changes — always in their own commit.
