@@ -49,6 +49,9 @@ Knot Forget has no Rust source yet. Before any domain logic can be built, the pr
 - R10. `Knot::new(id: u64, timestamp: u64, payload: Vec<u8>) -> Self` is the only constructor; it takes all three fields as arguments with no internal logic.
 - R11. A `#[cfg(test)]` module in `src/lib.rs` contains one test that calls `Knot::new()` with known values, asserts all three fields, and also exercises `Clone` and `Debug`.
 
+**Documentation**
+- R12. `README.md` includes a `Getting Started` section (between the project description and `License`) with: `Prerequisites` (Rust ≥ MSRV with rustup link), numbered clone and `cd` steps, `cargo build`, `cargo test`; and a `Development` section with `cargo clippy` and `cargo fmt` commands.
+
 ### Scope Boundaries
 
 **Explicitly deferred:**
@@ -195,6 +198,22 @@ No matrix builds or caching required for the initial setup.
 
 ---
 
+### U5. Add Getting Started documentation to README
+
+**Goal:** Add a `Getting Started` section and a `Development` section to `README.md`.
+
+**Requirements:** R12
+
+**Dependencies:** U1, U4
+
+**Files:** `README.md`
+
+**Approach:** Insert the new sections between the project description and `## License`. `Getting Started` contains: `Prerequisites` subsection (Rust ≥ MSRV with rustup link), numbered steps for clone and `cd`, then `cargo build` and `cargo test` as separate blocks. `Development` section contains `cargo clippy` and `cargo fmt` commands with inline comments.
+
+**Verification:** `README.md` renders correctly and contains all required subsections and commands.
+
+---
+
 ## Verification Contract
 
 | Check | Command | Done signal |
@@ -204,6 +223,7 @@ No matrix builds or caching required for the initial setup.
 | Lint clean | `cargo clippy --all-targets --all-features -- -D warnings` | Exit 0, no warnings |
 | Format consistent | `cargo fmt --check` | Exit 0, no diffs |
 | CI green | Push branch, open PR targeting `main` | Both `lint` and `test` jobs pass |
+| README | Read `README.md` | `Getting Started` and `Development` sections present |
 
 ---
 
@@ -214,4 +234,5 @@ No matrix builds or caching required for the initial setup.
 - `cargo clippy --all-targets --all-features -- -D warnings` exits 0.
 - `cargo fmt --check` exits 0.
 - CI is green on the PR for this branch.
+- `README.md` contains `Getting Started` and `Development` sections.
 - No dead-end or experimental code left in the diff.
